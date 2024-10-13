@@ -1,32 +1,41 @@
 .pace-input {
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+  margin: 2.4rem 0 2rem;
+  text-align: center;
+  // background-color: #f0f0f0;
+  // font-weight: bold;
 }
 
-.pace-input input[type=number] {
-  width: 50px;
-  margin: 0 5px;
+.pace-input {
+  input[type=text], input[type=number] {
+    width: 64px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 4px 8px;
+    text-align: center;
+    // background-color: #f8f8f8;
+
+    &:focus {
+      outline-color: #ccc;
+    }
+  }
 }
 
-.input-min {
-  text-align: right;
+input[type=range] {
+  width: 100%;
+  margin: 10px 0;
 }
 
 .pace-slider {
-  margin-bottom: 20px;
-}
-
-input[type="range"] {
-  width: 100%;
-}
-
-button {
-  margin-bottom: 20px;
+  margin: 2rem 0;
 }
 
 .results {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  width: 100%;
+  gap: 16px;
+  justify-content: center;
 }
 
 .result-box {
@@ -35,15 +44,25 @@ button {
   border-radius: 5px;
   text-align: center;
   flex: 1;
-  margin: 0 10px;
+  margin: 0;
+
+  h2 {
+    font-size: inherit;
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+    font-weight: bold;
+    color: #3db841;
+  }
 }
 
-.result-box h2 {
-  margin-top: 0;
-}
-
-.result-box p {
-  margin-bottom: 0;
-  font-size: 1.2em;
+.button-toggle-unit {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 5px 10px;
+  font-size: 1.4rem;
   font-weight: bold;
 }

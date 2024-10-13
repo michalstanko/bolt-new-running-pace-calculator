@@ -12,11 +12,11 @@ export class PaceCalcComponent {
   pace = 360; // 6:00 min/km
   paceMinutes = 6;
   paceSeconds = 0;
-  unit = 'min/km';
+  unit = 'km';
   times: { [key: string]: number } = {
     '10K': 0,
-    'halfMarathon': 0,
-    'marathon': 0
+    '21K': 0,
+    '42K': 0
   };
 
   ngOnInit() {
@@ -35,18 +35,18 @@ export class PaceCalcComponent {
   }
 
   calculateTimes() {
-    const paceInSeconds = this.unit === 'min/km' ? this.pace : this.pace * 1.60934;
+    const paceInSeconds = this.unit === 'km' ? this.pace : this.pace * 1.60934;
     this.times['10K'] = paceInSeconds * 10;
-    this.times['halfMarathon'] = paceInSeconds * 21.0975;
-    this.times['marathon'] = paceInSeconds * 42.195;
+    this.times['21K'] = paceInSeconds * 21.0975;
+    this.times['42K'] = paceInSeconds * 42.195;
   }
 
   toggleUnit() {
-    if (this.unit === 'min/km') {
-      this.unit = 'min/mi';
+    if (this.unit === 'km') {
+      this.unit = 'mi';
       this.pace = Math.round(this.pace / 1.60934);
     } else {
-      this.unit = 'min/km';
+      this.unit = 'km';
       this.pace = Math.round(this.pace * 1.60934);
     }
     this.updatePaceFromSlider();

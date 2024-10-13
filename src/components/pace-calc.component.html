@@ -1,14 +1,16 @@
 <div class="pace-input">
-  <label>Pace:</label>
-  <input type="number" class="input-min" [(ngModel)]="paceMinutes" min="0" max="15" (ngModelChange)="updatePaceFromInput()">
-  <span>:</span>
-  <input type="number" class="input-sec" [(ngModel)]="paceSeconds" min="0" max="59" (ngModelChange)="updatePaceFromInput()">
-  <span>{{ unit }}</span>
+  <div class="inputs">
+    <input type="number" class="input-min" [(ngModel)]="paceMinutes" min="0" max="15" (ngModelChange)="updatePaceFromInput()">
+    <span>:</span>
+    <input type="number" class="input-sec" [(ngModel)]="paceSeconds" min="0" max="59" (ngModelChange)="updatePaceFromInput()">
+    <span> per {{ unit }}</span>
+  </div>
 </div>
+
 <div class="pace-slider">
-  <input type="range" [(ngModel)]="pace" min="180" max="900" step="5" (input)="updatePaceFromSlider()">
+  <input type="range" [(ngModel)]="pace" min="150" max="900" step="5" (input)="updatePaceFromSlider()">
 </div>
-<button (click)="toggleUnit()">Switch to {{ unit === 'min/km' ? 'min/mi' : 'min/km' }}</button>
+
 <div class="results">
   <div class="result-box">
     <h2>10K</h2>
@@ -16,10 +18,12 @@
   </div>
   <div class="result-box">
     <h2>21K</h2>
-    <p>{{ formatTime(times['halfMarathon']) }}</p>
+    <p>{{ formatTime(times['21K']) }}</p>
   </div>
   <div class="result-box">
     <h2>42K</h2>
-    <p>{{ formatTime(times['marathon']) }}</p>
+    <p>{{ formatTime(times['42K']) }}</p>
   </div>
 </div>
+
+<button class="button-toggle-unit" (click)="toggleUnit()">Switch to {{ unit === 'km' ? 'mi' : 'km' }}</button>
