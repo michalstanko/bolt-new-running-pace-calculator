@@ -7,12 +7,15 @@
 }
 
 .pace-input {
-  input[type=text], input[type=number] {
+  font-weight: bold;
+
+  input[type=number] {
     width: 64px;
     margin: 0 2px;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 8px;
     padding: 4px 8px;
+    font-weight: normal;
     text-align: center;
     // background-color: #f8f8f8;
 
@@ -22,13 +25,22 @@
   }
 }
 
-input[type=range] {
-  width: 100%;
-  margin: 10px 0;
+.pace-slider {
+  margin: 3rem 0;
 }
 
-.pace-slider {
-  margin: 2rem 0;
+input[type=range] {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.ruler {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #bbb;
 }
 
 .results {
@@ -39,12 +51,14 @@ input[type=range] {
 }
 
 .result-box {
-  background-color: #f0f0f0;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: center;
   flex: 1;
   margin: 0;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f0f4f8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 
   h2 {
     font-size: inherit;
@@ -53,8 +67,7 @@ input[type=range] {
   
   p {
     margin: 0;
-    font-weight: bold;
-    color: #3db841;
+    color: #9fc141;
   }
 }
 

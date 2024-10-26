@@ -8,7 +8,12 @@
 </div>
 
 <div class="pace-slider">
-  <input type="range" [(ngModel)]="pace" min="150" max="900" step="5" (input)="updatePaceFromSlider()">
+  <input type="range" [(ngModel)]="pace" [min]="min" [max]="max" step="5" (input)="updatePaceFromSlider()">
+
+  <div class="ruler">
+    <div class="start">{{ minimumPace }} /{{ unit }}</div>
+    <div class="end">{{ maximumPace }} /{{ unit }}</div>
+  </div>
 </div>
 
 <div class="results">

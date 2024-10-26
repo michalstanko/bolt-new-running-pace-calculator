@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule]
 })
 export class PaceCalcComponent {
+  min = 150;
+  max = 600;
   pace = 360; // 6:00 min/km
   paceMinutes = 6;
   paceSeconds = 0;
@@ -18,6 +20,14 @@ export class PaceCalcComponent {
     '21K': 0,
     '42K': 0
   };
+
+  get minimumPace(): string {
+    return this.formatTime(this.min, true);
+  }
+
+  get maximumPace(): string {
+    return this.formatTime(this.max, true);
+  }
 
   ngOnInit() {
     this.updatePaceFromSlider();
@@ -52,10 +62,14 @@ export class PaceCalcComponent {
     this.updatePaceFromSlider();
   }
 
-  formatTime(seconds: number): string {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = Math.floor(seconds % 60);
-    return `${hours}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  formatTime(seconds: number, short: boolean = false): string {
+    const h = Math.floor(seconds / 3600);
+    const mm = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+    const ss = Math.floor(seconds % 60).toString().padStart(2, '0');
+
+    if (short) {
+      return `${mm}:${ss}`;
+    }
+    return `${h}:${mm}:${ss}`;
   }
 }
