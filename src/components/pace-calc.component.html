@@ -1,0 +1,34 @@
+<div class="pace-input">
+  <div class="inputs">
+    <input type="number" class="input-min" [(ngModel)]="paceMinutes" min="0" max="15" (ngModelChange)="updatePaceFromInput()">
+    <span>:</span>
+    <input type="number" class="input-sec" [(ngModel)]="paceSeconds" min="0" max="59" (ngModelChange)="updatePaceFromInput()">
+    <span> per {{ unit }}</span>
+  </div>
+</div>
+
+<div class="pace-slider">
+  <input type="range" [(ngModel)]="pace" [min]="min" [max]="max" step="5" (input)="updatePaceFromSlider()">
+
+  <div class="ruler">
+    <div class="start">{{ minimumPace }} /{{ unit }}</div>
+    <div class="end">{{ maximumPace }} /{{ unit }}</div>
+  </div>
+</div>
+
+<div class="results">
+  <div class="result-box">
+    <h2>10K</h2>
+    <p>{{ formatTime(times['10K']) }}</p>
+  </div>
+  <div class="result-box">
+    <h2>21K</h2>
+    <p>{{ formatTime(times['21K']) }}</p>
+  </div>
+  <div class="result-box">
+    <h2>42K</h2>
+    <p>{{ formatTime(times['42K']) }}</p>
+  </div>
+</div>
+
+<button class="button-toggle-unit" (click)="toggleUnit()">Switch to {{ unit === 'km' ? 'mi' : 'km' }}</button>

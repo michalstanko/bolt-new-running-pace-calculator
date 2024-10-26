@@ -1,0 +1,81 @@
+.pace-input {
+  font-size: 1.6rem;
+  margin: 2.4rem 0 2rem;
+  text-align: center;
+  // background-color: #f0f0f0;
+  // font-weight: bold;
+}
+
+.pace-input {
+  font-weight: bold;
+
+  input[type=number] {
+    width: 64px;
+    margin: 0 2px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-weight: normal;
+    text-align: center;
+    // background-color: #f8f8f8;
+
+    &:focus {
+      outline-color: #ccc;
+    }
+  }
+}
+
+.pace-slider {
+  margin: 3rem 0;
+}
+
+input[type=range] {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.ruler {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #bbb;
+}
+
+.results {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  justify-content: center;
+}
+
+.result-box {
+  flex: 1;
+  margin: 0;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f0f4f8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: inherit;
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+    color: #9fc141;
+  }
+}
+
+.button-toggle-unit {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 5px 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
